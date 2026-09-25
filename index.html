@@ -62,13 +62,12 @@
             <div class="contenedortech">
                     <ul class="ultechs">
                         <li><a href=""><h3>💡 Tecnologias</h3></a></li>
-                        <li><a href=""><img src="img/capicon.png" class="logo" alt="instagram"><h3>tech1</h3></a></li>
-                        <li><a href=""><img src="img/capicon.png" class="logo" alt="facebook"><h3>tech2</h3></a></li>
-                        <li><a href=""><img src="img/capicon.png" class="logo" alt="linkedin"><h3>tech3</h3></a></li>
-                        <li><a href=""><img src="img/capicon.png" class="logo" alt="linkedin"><h3>tech3</h3></a></li>
-                        <li><a href=""><img src="img/capicon.png" class="logo" alt="linkedin"><h3>tech3</h3></a></li>
-                        <li><a href=""><img src="img/capicon.png" class="logo" alt="linkedin"><h3>tech3</h3></a></li>
-                        <li><a href=""><img src="img/capicon.png" class="logo" alt="linkedin"><h3>tech3</h3></a></li>
+                        <li><a href=""><img src="img/python.png" class="logo" alt="python"><h3>Python</h3></a></li>
+                        <li><a href=""><img src="img/html5.png" class="logo" alt="html5"><h3>HTML5</h3></a></li>
+                        <li><a href=""><img src="img/css3.png" class="logo" alt="css3"><h3>CSS3</h3></a></li>
+                        <li><a href=""><img src="img/javascript.png" class="logo" alt="javascript"><h3>JavaScript</h3></a></li>
+                        <li><a href=""><img src="img/angular.png" class="logo" alt="angular"><h3>Angular</h3></a></li>
+                        <li><a href=""><img src="img/django.png" class="logo" id="django-logo" alt="django"><h3>Django</h3></a></li>
                     </ul>
             </div>
         </div>
@@ -76,8 +75,9 @@
     <div class="secondhalf">
         <div class="aboutme">
             <h4>🔍 Sobre Mí</h4>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi perspiciatis eligendi et ad aspernatur est saepe, dignissimos, iure doloremque rem, 
-                vitae quisquam at molestias dolores repudiandae culpa? Repellat, similique. Aperiam.</p>
+            <p>Mi formación en desarrollo de software se construyó trabajando de noche 
+            y estudiando de día, mientras seguía adelante con mis responsabilidades laborales y familiares.
+            Ese recorrido me enseñó a ser constante, adaptarme y seguir aprendiendo incluso cuando el tiempo no sobraba.</p>
         </div>
         <div class="proyects">
             <div class="banner">📂 Proyectos Destacados</div>
@@ -95,34 +95,38 @@
                 <div class="evento">
                     <div class="punto"></div>
                     <div class="contenido">
-                        <h3>Evento 1</h3>
-                        <p>descripcion del evento 1</p>
+                        <h3>Año 2020</h3>
+                        <p>Primeros pasos con cursos de python</p>
                     </div>
                 </div>
                 <div class="evento">
                     <div class="punto"></div>
                     <div class="contenido">
-                        <h3>Evento 2</h3>
-                        <p>descripcion del evento 2</p>
+                        <h3>Año 2021</h3>
+                        <p>Inicio Curso Argentina Programa</p>
                     </div>
                 </div>
                 <div class="evento">
                     <div class="punto"></div>
                     <div class="contenido">
-                        <h3>Evento 3</h3>
-                        <p>descripcion del evento 3</p>
+                        <h3>Año 2022</h3>
+                        <p>Finalizo primera y segunda Cohorte de Argentina Programa</p>
                     </div>
                 </div>
                 <div class="evento">
                     <div class="punto"></div>
                     <div class="contenido">
-                        <h3>Evento 4</h3>
-                        <p>descripcion del evento 4</p>
+                        <h3>Año 2023</h3>
+                        <p>Comienzo Tecnicatura en IFTS N°18</p>
                     </div>
                 </div>
                 <div class="evento">
                     <div class="punto"></div>
-                </div>                
+                    <div class="contenido">
+                        <h3>Año 2026</h3>
+                        <p>Finalizo Tecnicatura en IFTS N°18</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footercontainer">
@@ -140,9 +144,6 @@
                 </a>
             </div>
             <div class="footerright">
-                <div class="footerrightleft"><h5>📍Ubicacion</h5><p>Ciudad, País</p></div>
-                <div class="footerrightmid"><h5>⏱️Disponibilidad</h5><p>Remoto-FullTime</p></div>
-                <div class="footerrightright"><h5>✉️Email</h5><p>mimail@algo.com</p></div>
             </div>
             <div class="blank"></div>
         </div>   
@@ -207,7 +208,6 @@
     setTimeout(() => {
   console.log("Espere 1 segundos");
 }, 1000);
-
 const container = document.querySelector('.cards');
 const imagenes = document.querySelectorAll('.tarjetaproyecto');
 const btnAnterior = document.getElementById('anterior');
@@ -354,6 +354,36 @@ if (themeToggleButton) {
         }
     });
 }
+
+
+    const ubicacion = {
+        clase: "footerrightleft",
+        tipo: "📍Ubicacion",
+        dato1: "Buenos Aires",
+        dato2: "Arg"
+    };
+    const disponibilidad = {
+        clase: "footerrightmid",
+        tipo: "⏱️Disponibilidad",
+        dato1: "Remoto",
+        dato2: "Full Time"
+    };
+    const email = {
+        clase: "footerrightright",
+        tipo: "✉️Email",
+        dato1: "damezaga2@gmail.com",
+        dato2: ""
+    };
+    const footerContainer = document.querySelector(".footerright");
+    const frcards = [ubicacion, disponibilidad, email].map(elemento => {
+        return `
+        <div class="${elemento.clase}">
+            <h5>${elemento.tipo}</h5><p>${elemento.dato1} ${elemento.dato2}</p>
+        </div>
+        `;
+    }).join("");
+    footerContainer.innerHTML = frcards;
+
 
     </script>
 </body>
